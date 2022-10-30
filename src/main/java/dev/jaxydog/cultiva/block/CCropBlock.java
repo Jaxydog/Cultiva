@@ -4,11 +4,13 @@ import org.jetbrains.annotations.Nullable;
 
 import dev.jaxydog.cultiva.Cultiva;
 import dev.jaxydog.cultiva.block.CBlock.Properties;
-import dev.jaxydog.cultiva.utility.Registerable;
+import dev.jaxydog.cultiva.utility.ClientRegisterable;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -19,7 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 
-public class CCropBlock extends CropBlock implements Registerable {
+public class CCropBlock extends CropBlock implements ClientRegisterable {
 
 	protected final Properties _PROPERTIES;
 	protected final CropConfig _CROP_CONFIG;
@@ -66,6 +68,12 @@ public class CCropBlock extends CropBlock implements Registerable {
 	@Override
 	public CCropBlock register() {
 		return Registry.register(Registry.BLOCK, getRegistryId(), this);
+	}
+
+	@Override
+	public CCropBlock registerClient() {
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), this);
+		return this;
 	}
 
 	public static class CropConfig {
