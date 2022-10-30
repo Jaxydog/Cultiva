@@ -8,10 +8,10 @@ public class CultivaServer implements DedicatedServerModInitializer {
 
 	@Override
 	public void onInitializeServer() {
+		Cultiva.LOGGER.info("Loading Cultiva (Server)!");
+
 		CBlocks.registerServer();
 		CItems.registerServer();
-
-		Cultiva.LOGGER.info("Cultiva (server) has been loaded successfully!");
 	}
 
 }

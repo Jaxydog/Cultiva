@@ -18,9 +18,9 @@ public class Cultiva implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		LOGGER.info("Loading Cultiva!");
+
 		CBlocks.register();
 		CItems.register();
-
-		LOGGER.info("Cultiva has been loaded successfully!");
 	}
 }

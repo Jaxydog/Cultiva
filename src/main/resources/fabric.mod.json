@@ -18,7 +18,8 @@
 	"entrypoints": {
 		"main": ["dev.jaxydog.cultiva.Cultiva"],
 		"client": ["dev.jaxydog.cultiva.CultivaClient"],
-		"server": ["dev.jaxydog.cultiva.CultivaServer"]
+		"server": ["dev.jaxydog.cultiva.CultivaServer"],
+		"fabric-datagen": ["dev.jaxydog.cultiva.CultivaDataGen"]
 	},
 	"mixins": ["cultiva.mixins.json"],
 

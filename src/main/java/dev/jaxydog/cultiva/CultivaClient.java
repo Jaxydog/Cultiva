@@ -8,10 +8,10 @@ public class CultivaClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		Cultiva.LOGGER.info("Loading Cultiva (Client)!");
+
 		CBlocks.registerClient();
 		CItems.registerClient();
-
-		Cultiva.LOGGER.info("Cultiva (client) has been loaded successfully!");
 	}
 
 }
