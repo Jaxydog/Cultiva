@@ -1,7 +1,5 @@
 package dev.jaxydog.cultiva.block;
 
-import org.jetbrains.annotations.Nullable;
-
 import dev.jaxydog.cultiva.Cultiva;
 import dev.jaxydog.cultiva.utility.Registerable;
 import net.minecraft.block.Block;
@@ -18,7 +16,7 @@ public class CBlock extends Block implements Registerable {
 	}
 
 	@Override
-	public @Nullable Identifier getRegistryId() {
+	public Identifier getRegistryId() {
 		return Cultiva.id(_PROPERTIES.getName());
 	}
 

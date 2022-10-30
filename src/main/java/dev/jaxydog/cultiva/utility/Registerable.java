@@ -6,8 +6,7 @@ import net.minecraft.util.Identifier;
 
 public interface Registerable {
 
-	@Nullable
-	public Identifier getRegistryId();
+	public @Nullable Identifier getRegistryId();
 
 	public Registerable register();
 
