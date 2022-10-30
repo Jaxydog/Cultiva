@@ -11,4 +11,16 @@ public interface Registerable {
 
 	public Registerable register();
 
+	public static interface Client extends Registerable {
+
+		public Client registerClient();
+
+	}
+
+	public static interface Server extends Registerable {
+
+		public Server registerServer();
+
+	}
+
 }

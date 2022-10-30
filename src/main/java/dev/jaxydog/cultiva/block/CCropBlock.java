@@ -4,7 +4,7 @@ import org.jetbrains.annotations.Nullable;
 
 import dev.jaxydog.cultiva.Cultiva;
 import dev.jaxydog.cultiva.block.CBlock.Properties;
-import dev.jaxydog.cultiva.utility.ClientRegisterable;
+import dev.jaxydog.cultiva.utility.Registerable;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -21,7 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 
-public class CCropBlock extends CropBlock implements ClientRegisterable {
+public class CCropBlock extends CropBlock implements Registerable.Client {
 
 	protected final Properties _PROPERTIES;
 	protected final CropConfig _CROP_CONFIG;
