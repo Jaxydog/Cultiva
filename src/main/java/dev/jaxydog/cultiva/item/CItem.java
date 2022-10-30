@@ -6,10 +6,13 @@ import java.util.List;
 import dev.jaxydog.cultiva.Cultiva;
 import dev.jaxydog.cultiva.utility.Overwrite;
 import dev.jaxydog.cultiva.utility.Registerable;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -17,6 +20,13 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
 public class CItem extends Item implements Registerable {
+
+	public static final ItemGroup CROPS_GROUP = FabricItemGroupBuilder.build(Cultiva.id("crops"),
+			() -> Items.WHEAT.getDefaultStack());
+	public static final ItemGroup FOODS_GROUP = FabricItemGroupBuilder.build(Cultiva.id("foods"),
+			() -> Items.BREAD.getDefaultStack());
+	public static final ItemGroup TOOLS_GROUP = FabricItemGroupBuilder.build(Cultiva.id("tools"),
+			() -> Items.SHEARS.getDefaultStack());
 
 	protected final Properties _PROPERTIES;
 
