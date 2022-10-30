@@ -1,38 +1,31 @@
 {
-  "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+	"schemaVersion": 1,
+	"id": "cultiva",
+	"version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
-  "authors": [
-    "Me!"
-  ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
+	"name": "Cultiva",
+	"description": "Food and crop expansion mod!",
+	"authors": ["Jaxydog"],
+	"contact": {
+		"homepage": "https://github.com/Jaxydog/Cultiva#README",
+		"sources": "https://github.com/FabricMC/Cultiva"
+	},
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+	"license": "CC0-1.0",
+	"icon": "assets/cultiva/icon.png",
 
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
-    ]
-  },
-  "mixins": [
-    "modid.mixins.json"
-  ],
+	"environment": "*",
+	"entrypoints": {
+		"main": ["dev.jaxydog.cultiva.Cultiva"],
+		"client": ["dev.jaxydog.cultiva.CultivaClient"],
+		"server": ["dev.jaxydog.cultiva.CultivaServer"]
+	},
+	"mixins": ["cultiva.mixins.json"],
 
-  "depends": {
-    "fabricloader": ">=0.14.9",
-    "fabric-api": "*",
-    "minecraft": "~1.19",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
-  }
+	"depends": {
+		"fabricloader": ">=0.14.10",
+		"fabric-api": "*",
+		"minecraft": "~1.19",
+		"java": ">=17"
+	}
 }
