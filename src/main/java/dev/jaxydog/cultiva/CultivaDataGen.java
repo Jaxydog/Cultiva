@@ -9,8 +9,6 @@ public class CultivaDataGen implements DataGeneratorEntrypoint {
 
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-		Cultiva.LOGGER.info("Loading Cultiva (Data Generator)!");
-
 		fabricDataGenerator.addProvider(CBlockLootTableGenerator::new);
 		fabricDataGenerator.addProvider(CModelGenerator::new);
 	}
