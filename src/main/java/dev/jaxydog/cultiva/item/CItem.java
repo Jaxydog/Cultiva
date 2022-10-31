@@ -31,7 +31,7 @@ public class CItem extends Item implements Generatable.Model<ItemModelGenerator>
 	public static final ItemGroup CROPS_GROUP = FabricItemGroupBuilder.build(Cultiva.id("crops"),
 			() -> Items.WHEAT.getDefaultStack());
 	public static final ItemGroup FOODS_GROUP = FabricItemGroupBuilder.build(Cultiva.id("foods"),
-			() -> Items.BREAD.getDefaultStack());
+			() -> CItems.AVOCADO.getDefaultStack());
 	public static final ItemGroup TOOLS_GROUP = FabricItemGroupBuilder.build(Cultiva.id("tools"),
 			() -> Items.SHEARS.getDefaultStack());
 
@@ -139,7 +139,7 @@ public class CItem extends Item implements Generatable.Model<ItemModelGenerator>
 
 	}
 
-	public class LootModifier {
+	public static class LootModifier {
 
 		private final Identifier __TABLE_ID;
 		private final boolean __REQUIRE_BUILTIN;
