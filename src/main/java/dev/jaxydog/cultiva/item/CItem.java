@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dev.jaxydog.cultiva.Cultiva;
+import dev.jaxydog.cultiva.utility.Generatable;
 import dev.jaxydog.cultiva.utility.Overwrite;
 import dev.jaxydog.cultiva.utility.Registerable;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.resource.language.I18n;
+import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -23,7 +26,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
-public class CItem extends Item implements Registerable {
+public class CItem extends Item implements Generatable.Model<ItemModelGenerator>, Registerable {
 
 	public static final ItemGroup CROPS_GROUP = FabricItemGroupBuilder.build(Cultiva.id("crops"),
 			() -> Items.WHEAT.getDefaultStack());
@@ -52,6 +55,12 @@ public class CItem extends Item implements Registerable {
 		}
 
 		super.appendTooltip(stack, world, tooltip, context);
+	}
+
+	@Override
+	public CItem generateModel(ItemModelGenerator generator) {
+		generator.register(this, Models.GENERATED);
+		return null;
 	}
 
 	@Override

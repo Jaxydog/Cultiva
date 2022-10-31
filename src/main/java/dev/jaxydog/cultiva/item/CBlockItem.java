@@ -4,10 +4,13 @@ import java.util.List;
 
 import dev.jaxydog.cultiva.Cultiva;
 import dev.jaxydog.cultiva.item.CItem.Properties;
+import dev.jaxydog.cultiva.utility.Generatable;
 import dev.jaxydog.cultiva.utility.Registerable;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.resource.language.I18n;
+import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Models;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -16,7 +19,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
-public class CBlockItem extends BlockItem implements Registerable {
+public class CBlockItem extends BlockItem implements Generatable.Model<ItemModelGenerator>, Registerable {
 
 	protected final Properties _PROPERTIES;
 
@@ -38,6 +41,12 @@ public class CBlockItem extends BlockItem implements Registerable {
 		}
 
 		super.appendTooltip(stack, world, tooltip, context);
+	}
+
+	@Override
+	public CBlockItem generateModel(ItemModelGenerator generator) {
+		generator.register(this, Models.CUBE_ALL);
+		return null;
 	}
 
 	@Override
